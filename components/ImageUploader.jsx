@@ -3,7 +3,6 @@ import { useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { Upload, ImagePlus, AlertCircle } from 'lucide-react';
 import toast from 'react-hot-toast';
-import { ACCEPTED_TYPES } from '@/utils/fileValidation';
 import clsx from 'clsx';
 
 const MAX_IMAGES = parseInt(process.env.NEXT_PUBLIC_MAX_IMAGES || '60');

@@ -1,7 +1,6 @@
 'use client';
-import { Download, Copy, Archive, FileText, FileType } from 'lucide-react';
+import { Copy, Archive, FileText, FileType } from 'lucide-react';
 import { useExport } from '@/hooks/useExport';
-import { useState } from 'react';
 import clsx from 'clsx';
 
 export default function ExportButtons({ sections, combined }) {

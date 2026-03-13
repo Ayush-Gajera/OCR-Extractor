@@ -11,7 +11,7 @@ export function useExport(sections, combined) {
     try {
       downloadTxt(sections, combined);
       toast.success('Downloaded as .txt!');
-    } catch (e) {
+    } catch {
       toast.error('Failed to export TXT');
     }
   }, [sections, combined]);
@@ -21,7 +21,7 @@ export function useExport(sections, combined) {
     try {
       await downloadDocx(sections, combined);
       toast.success('Downloaded as .docx!', { id: toastId });
-    } catch (e) {
+    } catch {
       toast.error('Failed to export DOCX', { id: toastId });
     }
   }, [sections, combined]);
@@ -31,7 +31,7 @@ export function useExport(sections, combined) {
     try {
       await downloadZip(sections);
       toast.success('Downloaded ZIP archive!', { id: toastId });
-    } catch (e) {
+    } catch {
       toast.error('Failed to create ZIP', { id: toastId });
     }
   }, [sections]);
@@ -40,7 +40,7 @@ export function useExport(sections, combined) {
     try {
       await copyToClipboard(sections, combined);
       toast.success('Copied to clipboard!');
-    } catch (e) {
+    } catch {
       toast.error('Failed to copy to clipboard');
     }
   }, [sections, combined]);

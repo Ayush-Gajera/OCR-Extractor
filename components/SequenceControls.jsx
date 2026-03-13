@@ -1,5 +1,5 @@
 'use client';
-import { ArrowDownAZ, ArrowUpZA, RotateCcw, Shuffle, Trash2, RefreshCw } from 'lucide-react';
+import { ArrowDownAZ, ArrowUpZA, RotateCcw, Shuffle, Trash2 } from 'lucide-react';
 import clsx from 'clsx';
 
 function ControlButton({ onClick, icon: Icon, label, variant = 'default' }) {

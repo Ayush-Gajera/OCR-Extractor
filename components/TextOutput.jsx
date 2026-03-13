@@ -2,10 +2,8 @@
 import { useState, useRef, useEffect } from 'react';
 import { FileText, ToggleLeft, ToggleRight, Edit3 } from 'lucide-react';
 import { countWords, countCharacters, buildFullOutput } from '@/utils/textFormatter';
-import clsx from 'clsx';
 
-export default function TextOutput({ sections, onSectionsChange }) {
-  const [combined, setCombined] = useState(false);
+export default function TextOutput({ sections, onSectionsChange, combined, onCombinedChange }) {
   const [editableText, setEditableText] = useState('');
   const [isEditing, setIsEditing] = useState(false);
   const bottomRef = useRef(null);
@@ -61,7 +59,7 @@ export default function TextOutput({ sections, onSectionsChange }) {
       <div className="flex items-center justify-between flex-wrap gap-2 shrink-0">
         <div className="flex items-center gap-2">
           <button
-            onClick={() => setCombined((v) => !v)}
+            onClick={() => onCombinedChange(!combined)}
             className="flex items-center gap-1.5 text-sm text-gray-600 dark:text-gray-300 hover:text-violet-600 dark:hover:text-violet-400 transition-colors"
           >
             {combined ? <ToggleRight size={20} className="text-violet-500" /> : <ToggleLeft size={20} />}

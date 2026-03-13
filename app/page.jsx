@@ -101,7 +101,7 @@ export default function Home() {
       resetOCR();
       const count = addImages(files);
       toast.success(`${count} demo images loaded! Click "Start OCR Extraction" to try.`, { id: 'demo' });
-    } catch (e) {
+    } catch {
       toast.error('Could not load demo images.', { id: 'demo' });
     }
   }, [addImages, clearAll, resetOCR, isProcessing]);
@@ -258,7 +258,12 @@ export default function Home() {
             </div>
 
             <div className="flex-1 overflow-hidden bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm p-4">
-              <TextOutput sections={sections} onSectionsChange={setSections} />
+              <TextOutput
+                sections={sections}
+                onSectionsChange={setSections}
+                combined={combined}
+                onCombinedChange={setCombined}
+              />
             </div>
 
             {/* Info panel */}
